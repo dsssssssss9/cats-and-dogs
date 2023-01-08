@@ -6,18 +6,18 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     STOP()
 })
 function GO () {
-    robotbit.Servo(robotbit.Servos.S8, 180)
+    robotbit.Servo(robotbit.Servos.S1, 180)
     pause(2000)
     strip.setAll(0x00ff00)
 }
 function STOP () {
     strip.setAll(0xff0000)
-    robotbit.Servo(robotbit.Servos.S8, 0)
+    robotbit.Servo(robotbit.Servos.S1, 0)
     pause(1000)
 }
 function AMBER () {
     strip.setAll(0xff0000)
-    robotbit.Servo(robotbit.Servos.S8, 90)
+    robotbit.Servo(robotbit.Servos.S1, 90)
     pause(1000)
 }
 controller.menu.onEvent(ControllerButtonEvent.Pressed, function () {
