@@ -5,7 +5,8 @@
         "device": "*",
         "robotbit": "github:KittenBot/meow-robotbit#v0.3.3",
         "light": "*",
-        "edge-connector": "*"
+        "edge-connector": "*",
+        "Timers": "github:microsoft/arcade-timers#v1.1.0"
     },
     "files": [
         "main.blocks",

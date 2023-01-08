@@ -7,16 +7,9 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 function GO () {
     robotbit.Servo(robotbit.Servos.S8, 180)
-    pause(1000)
+    pause(2000)
     strip.setAll(0x00ff00)
 }
-controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-    Glight.setPosition(81, 65)
-    Rlight.y = 200
-    Ylight.y = 200
-    scene.setBackgroundColor(1)
-    GO()
-})
 function STOP () {
     strip.setAll(0xff0000)
     robotbit.Servo(robotbit.Servos.S8, 0)
@@ -33,6 +26,13 @@ controller.menu.onEvent(ControllerButtonEvent.Pressed, function () {
     Rlight.y = 200
     scene.setBackgroundColor(1)
     AMBER()
+})
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    Glight.setPosition(81, 65)
+    Rlight.y = 200
+    Ylight.y = 200
+    scene.setBackgroundColor(1)
+    GO()
 })
 let Ylight: Sprite = null
 let Rlight: Sprite = null
