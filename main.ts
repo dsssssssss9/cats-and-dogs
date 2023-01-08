@@ -8,6 +8,7 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 function GO () {
     robotbit.Servo(robotbit.Servos.S8, 180)
     pause(1000)
+    strip.setAll(0x00ff00)
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     Glight.setPosition(81, 65)
@@ -17,10 +18,12 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     GO()
 })
 function STOP () {
+    strip.setAll(0xff0000)
     robotbit.Servo(robotbit.Servos.S8, 0)
     pause(1000)
 }
 function AMBER () {
+    strip.setAll(0xff0000)
     robotbit.Servo(robotbit.Servos.S8, 90)
     pause(1000)
 }
@@ -34,7 +37,8 @@ controller.menu.onEvent(ControllerButtonEvent.Pressed, function () {
 let Ylight: Sprite = null
 let Rlight: Sprite = null
 let Glight: Sprite = null
-let strip = light.createStrip(pins.P16, 30)
+let strip: light.NeoPixelStrip = null
+strip = light.createStrip(pins.P16, 30)
 strip.setBrightness(20)
 strip.clear()
 Glight = sprites.create(img`
